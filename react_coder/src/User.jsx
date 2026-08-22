@@ -1,7 +1,12 @@
-function User(){
-  return(<div>
-    <h1>Raju</h1>
-  </div>)
+function User({user}){
+  return(
+    <div>
+      <hr></hr>
+      <h2>Name:{user.name}</h2>
+      <h2>Age:{user.age}</h2>
+      <h2>Email:{user.email}</h2>
+    </div>
+  )
 }
 
 export default User;
