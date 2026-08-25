@@ -1,30 +1,116 @@
 import { useState } from "react";
 // import CheckBoxes from "./CheckBoxes";
+// import User1 from "./User1";
+import Clock from "./Clock";
 
 
 function App(){
 
-const [gender,setGender]=useState('female');
-const [city,setCity]=useState('delhi');
+// const userData=[
+//   {
+//     name:'Raju',
+//     age:'20',
+//     email:'raju032004gmail.com',
+//     id:1
+
+//   },
+
+//   {
+//     name:'Raju',
+//     age:'20',
+//     email:'raju032004gmail.com',
+//     id:2
+
+//   },
+
+//   {
+//     name:'Raju',
+//     age:'20',
+//     email:'raju032004gmail.com',
+//     id:3
+
+//   },
+
+//   {
+//     name:'Raju',
+//     age:'20',
+//     email:'raju032004gmail.com',
+//     id:4
+
+//   }
+// ]
+
+// const userData=[
+//   {
+//     name:'Raju',
+//     age:'20',
+//     email:"raju032002@gmail.com",
+//     id:1
+//   },
+//    {
+//     name:'Raju',
+//     age:'20',
+//     email:"raju032002@gmail.com",
+//     id:2
+//   },
+//    {
+//     name:'Raju',
+//     age:'20',
+//     email:"raju032002@gmail.com",
+//     id:3
+//   },
+//    {
+//     name:'Raju',
+//     age:'20',
+//     email:"raju032002@gmail.com",
+//     id:4
+//   }
+// ]
   return(
 
-    <div>
-     <h1>Hamdle Radio and Dropdown</h1>
-     <h4>Select Gender</h4>
-     <input type="radio" onChange={(event)=>setGender(event.target.value)} name="gender" value={"male"} checked={gender=='male'} id="male"/>
-     <label htmlFor="male">Male</label>
-     <input type="radio" onChange={(event)=>setGender(event.target.value)} name="gender" value={"female"} checked={gender=='female'} id="female"/>
-     <label htmlFor="female">Female</label>
-     <h2>Selected Gender :{gender}</h2>
-     <br/>
-     <h4>Select City</h4>
-     <select onChange={(event)=>setCity(event.target.value)} defaultValue={"delhi"}>
-      <option value="noida">Noida</option>
-      <option value="gurgram">Gurgram</option>
-      <option value="delhi">Delhi</option>
-     </select>
-     <h2>Selected City : {city}</h2>
-    </div>
+  //   <div>
+  // <h1>Loop in jxs with map Function</h1>
+  // <table border="1">
+  // <thead>
+  //   <tr>
+  //     <td>Id</td>
+  //     <td>Name</td>
+  //     <td>Email</td>
+  //     <td>Age</td>
+  //   </tr>
+  // </thead>
+  // <tbody>
+  //   {
+  //     userData.map((user)=>(
+  //       <tr>
+  //     <td>{user.id}</td>
+  //     <td>{user.name}</td>
+  //     <td>{user.email}</td>
+  //     <td>{user.age}</td>
+  //       </tr>
+
+  //     ))
+  //   }
+  // </tbody>
+  // </table>
+  //   </div>
+
+  // <div>
+  //   <h1>Reuse Component in Loop</h1>
+  //   {
+  //     userData.map((user)=>(
+  //       <div key={user.id}>
+  //        <User1  data={user}/>
+  //       </div>
+
+  //     ))
+  //   }
+  // </div>
+
+  <div>
+<h1>Digital Clock in React js React Js</h1>
+<Clocl />
+  </div>
   )
 }
 
