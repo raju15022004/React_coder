@@ -1,21 +1,22 @@
 import { useState } from "react";
-import Clock from "./Clock";
+// import Clock from "./Clock";
+import Counter1 from "./Counter1"; 
 
 
 
 function App(){
- const[color,setColor]=useState('red');
+//  const [counter,setCounter]=useState(0)
+//  function callOnce(){
+//   console.log("callOnce function called");
+//  }
+
+//  callOnce();
   return(
 
   <div>
-<h1>Digital Clock in React js React Js</h1>
-<select onChange={(event)=>setColor(event.target.value)}>
-  <option value={"red"}>Red</option>
-  <option value={"blue"}>Blue</option>
-  <option value={"green"}>Green</option>
-  <option value={"orange"}>Orange</option>
-</select>
-<Clock  color={color} />
+   {/* <h1>useEffect Hook</h1> */}
+   {/* <button onClick={()=>setCounter(counter+1)}>Counter{counter}</button> */}
+   <Counter1 />
   </div>
   )
 }
