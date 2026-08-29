@@ -1,37 +1,37 @@
-import styled from "styled-components"
-
+import {Button} from "react-bootstrap"
+import { Alert,Container,Navbar,Nav,NavDropdown } from "react-bootstrap";
 function App(){
 
-  // const Heading=styled.h1`
-  // color:red;
-  // border:1px solid green;
-
-  // `
-
-  const Heading=styled.h1({
-    color:'red',
-    border:'1px solid green',
-    borderRadius:'5px',
-    margin:'20px',
-    padding:'20px',
-  })
-
-  const StyleBtn=styled.button`
-  color:red;
-  width:120px;
-  height:40px;
-  margin:20px
-  `
-
   return(
-
   <>
-   <h1>hello</h1>
-   <Heading>Hello Heading</Heading>
-   <Heading>Hello Heading</Heading>
-   <Heading>Hello Heading</Heading>
-   <Heading>Hello Heading</Heading>
-   <StyleBtn>Login</StyleBtn>
+   <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+ <h1>Add Bootstrap in React Js</h1>
+
+ <Alert variant="danger">Hello Bt installed</Alert>
+ <Button  onClick={()=>alert("Bootstrap Button")}  variant="success">ok</Button>
+ <Button onClick={()=>alert("Bootstrap Button")} variant="primary">Simple Button</Button>
   </>
   )
 }
