@@ -1,24 +1,20 @@
-import { useState, useTransition } from "react";
-
+let count=0
 function App(){
- const [pending,startTransition]=useTransition();
 
- const handleButton=()=>{
-  startTransition(async()=>{
-    await new Promise(res=>setTimeout(res,5000))
-  })
- }
   return(
-  <div>
-    <h1>useTransition Hook in React js 19</h1>
-    {
-      pending?
-      <img style={{width:"100px"}} src="https://media1.tenor.com/images/d6cd5151c04765d1992edfde14483068/tenor.gif?itemid=5662595" alt="" />:null
-    }
-    <button disabled={pending} onClick={handleButton}>Click</button>
-
-  </div>
+  <>
+  <h1>Keeping Components Pure</h1>
+  <Counter />
+  <Counter />
+  <Counter />
+  <Counter />
+    </>
   );
+}
+
+const Counter=()=>{
+  count=count+1
+ return <h1>Counter {count}</h1>
 }
 
 
