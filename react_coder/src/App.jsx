@@ -1,114 +1,37 @@
-import './css/style.css'
-
+import styled from "styled-components"
 
 function App(){
+
+  // const Heading=styled.h1`
+  // color:red;
+  // border:1px solid green;
+
+  // `
+
+  const Heading=styled.h1({
+    color:'red',
+    border:'1px solid green',
+    borderRadius:'5px',
+    margin:'20px',
+    padding:'20px',
+  })
+
+  const StyleBtn=styled.button`
+  color:red;
+  width:120px;
+  height:40px;
+  margin:20px
+  `
 
   return(
 
   <>
-   <h1 className="heading" >External Style</h1>
-   <div className='container'>
-   <div className='user-card'>
-    <div>
-      <img className="img-style" src="https://cdn.pixabay.com/photo/2023/06/16/15/10/man-8068201_1280.jpg" alt="" />
-    </div>
-   <div className='text-wrap'>
-   <h4>Raju Kuamr</h4>
-   <p>software developer</p>
-   </div>
-   </div >
-
-   <div className='user-card'>
-    <div>
-      <img className="img-style" src="https://cdn.pixabay.com/photo/2023/06/16/15/10/man-8068201_1280.jpg" alt="" />
-    </div>
-   <div className='text-wrap'>
-   <h4>Raju Kuamr</h4>
-   <p>software developer</p>
-   </div>
-   </div >
-
-   <div className='user-card'>
-    <div>
-      <img className="img-style" src="https://cdn.pixabay.com/photo/2023/06/16/15/10/man-8068201_1280.jpg" alt="" />
-    </div>
-   <div className='text-wrap'>
-   <h4>Raju Kuamr</h4>
-   <p>software developer</p>
-   </div>
-   </div >
-
-   <div className='user-card'>
-    <div>
-      <img className="img-style" src="https://cdn.pixabay.com/photo/2023/06/16/15/10/man-8068201_1280.jpg" alt="" />
-    </div>
-   <div className='text-wrap'>
-   <h4>Raju Kuamr</h4>
-   <p>software developer</p>
-   </div>
-   </div >
-
-   <div className='user-card'>
-    <div>
-      <img className="img-style" src="https://cdn.pixabay.com/photo/2023/06/16/15/10/man-8068201_1280.jpg" alt="" />
-    </div>
-   <div className='text-wrap'>
-   <h4>Raju Kuamr</h4>
-   <p>software developer</p>
-   </div>
-   </div >
-
-   <div className='user-card'>
-    <div>
-      <img className="img-style" src="https://cdn.pixabay.com/photo/2023/06/16/15/10/man-8068201_1280.jpg" alt="" />
-    </div>
-   <div className='text-wrap'>
-   <h4>Raju Kuamr</h4>
-   <p>software developer</p>
-   </div>
-   </div >
-
-   <div className='user-card'>
-    <div>
-      <img className="img-style" src="https://cdn.pixabay.com/photo/2023/06/16/15/10/man-8068201_1280.jpg" alt="" />
-    </div>
-   <div className='text-wrap'>
-   <h4>Raju Kuamr</h4>
-   <p>software developer</p>
-   </div>
-   </div >
-
-   <div className='user-card'>
-    <div>
-      <img className="img-style" src="https://cdn.pixabay.com/photo/2023/06/16/15/10/man-8068201_1280.jpg" alt="" />
-    </div>
-   <div className='text-wrap'>
-   <h4>Raju Kuamr</h4>
-   <p>software developer</p>
-   </div>
-   </div >
-
-   <div className='user-card'>
-    <div>
-      <img className="img-style" src="https://cdn.pixabay.com/photo/2023/06/16/15/10/man-8068201_1280.jpg" alt="" />
-    </div>
-   <div className='text-wrap'>
-   <h4>Raju Kuamr</h4>
-   <p>software developer</p>
-   </div>
-   </div >
-
-   <div className='user-card'>
-    <div>
-      <img className="img-style" src="https://cdn.pixabay.com/photo/2023/06/16/15/10/man-8068201_1280.jpg" alt="" />
-    </div>
-   <div className='text-wrap'>
-   <h4>Raju Kuamr</h4>
-   <p>software developer</p>
-   </div>
-   </div >
-
-   </div>
+   <h1>hello</h1>
+   <Heading>Hello Heading</Heading>
+   <Heading>Hello Heading</Heading>
+   <Heading>Hello Heading</Heading>
+   <Heading>Hello Heading</Heading>
+   <StyleBtn>Login</StyleBtn>
   </>
   )
 }
