@@ -1,23 +1,20 @@
-import User2 from "./User2"
+import { useRef } from "react";
+import Userinput from "./Userinput"
 
 function App(){
 
-  const displayName=(name)=>{
-    alert(name)
-  }
+  const inputRef=useRef(null)
 
-    const getUser=()=>{
-     alert("get user function called ")
-    }
+  const updateInput=()=>{
+    inputRef.current.value=1000;
+    inputRef.current.focus();
+  }
 
   return(
   <>
-  <h1>Call Parent component function from chaild component</h1>
-  <User2  displayName={displayName} name="raju" getUser={getUser}/>
-  <User2  displayName={displayName} name="raj" getUser={getUser}/>
-  <User2  displayName={displayName} name="rohit" getUser={getUser}/>
-  <User2  displayName={displayName} name="raju" getUser={getUser}/>
-
+<h1>Forward Ref</h1>
+<Userinput ref={inputRef} />
+<button onClick={updateInput}>Update Input field</button>
   </>
   )
 }
