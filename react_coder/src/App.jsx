@@ -1,13 +1,12 @@
 import { useState } from "react";
-import Adduser from "./AddUser";
-import DisplayUser from "./DisplayUser";
 
 function App(){
-const [user,setUser]=useState('')
+const [name,setName]=useState("Raju")
   return(
   <div>
-   <Adduser setUser={setUser}/>
-   <DisplayUser user={user}/>
+  <h1>Updating Array in State</h1>
+  <h2>{name}</h2>
+  <button onClick={()=>setName("Raju Kumar")}>Update Name</button>
     </div>
   )
 }
