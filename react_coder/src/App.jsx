@@ -1,25 +1,21 @@
-import { useState } from "react";
-import College1 from "./College1";
-import { SubjectContext } from "./ContextData";
+import {  Route, Routes } from "react-router"
+import Home from './Home'
+import About from './About'
+import Login from "./Login";
+import NavBar from "./NavBar";
+
  function App(){
-  const [Subject,setSubject]=useState('')
   return(
-  <div style={{backgroundColor:"yellow",padding:10}}>
-    <SubjectContext.Provider value={Subject}>
-      <select defaultValue={Subject} onChange={(event)=>setSubject(event.target.value)}>
-        <option value="">Select Subject</option>
-        <option value="Maths">Maths</option>
-        <option value="History">History</option>
-        <option value="English">English</option>
-      </select>
-  <h1>Context API</h1>
-  <button onClick={()=>setSubject('')}>Clear Subject</button>
-  <College1/>
-  </SubjectContext.Provider>
-  </div>
+<>
+<NavBar/>
+
+<Routes>
+  <Route path="/" element={<Home/>}/>
+  <Route path="/about" element={<About/>}/>
+  <Route path="/Login" element={<Login/>}/>
+</Routes>
+</>
   )
 }
-
-
 
 export default App;
