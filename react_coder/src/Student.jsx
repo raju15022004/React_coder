@@ -1,14 +1,10 @@
-function Student({name}){
+function Student(){
 
   return(
     <div>
-      <hr/>
-      <h1>Student Name:{name}</h1>
-
-
+      <h1>Student Page</h1>
     </div>
   )
-
 }
 
 export default Student;
