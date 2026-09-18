@@ -1,38 +1,54 @@
-import { Link } from "react-router";
-import './header.css'
-function NavBar(){
+import { Link, Outlet } from "react-router-dom";
+import "./header.css";
 
-  return(
-    <div className="header">
-      <div>
-        <Link className="link" to={"/"}><h2>Logo</h2></Link>
+function NavBar() {
+  return (
+    <>
+      <div className="header">
+        <div>
+          <Link className="link" to="/">
+            <h2>Logo</h2>
+          </Link>
+        </div>
+
+        <div>
+          <ul>
+            <li>
+              <Link className="link" to="/">
+                Home
+              </Link>
+            </li>
+
+            <li>
+              <Link className="link" to="/login">
+                Login
+              </Link>
+            </li>
+
+            <li>
+              <Link className="link" to="/about">
+                About
+              </Link>
+            </li>
+
+            <li>
+              <Link className="link" to="/college">
+                College
+              </Link>
+            </li>
+
+            <li>
+              <Link className="link" to="/users">
+                Users
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div>
-        <ul>
-          <li>
-            <Link className="link" to="/">Home</Link>
-          </li>
-          <li>
-            <Link className="link" to="/login">Login</Link>
-          </li>
-          <li>
-            <Link className="link" to="/about">About</Link>
-          </li>
-
-          <li>
-            <Link className="link" to="/college">College</Link>
-          </li>
-
-           <li>
-            <Link className="link" to="/users">Users</Link>
-          </li>
-
-        </ul>
-      </div>
-    </div>
-
-  )
+      <Outlet />
+    </>
+  );
 }
 
 export default NavBar;
