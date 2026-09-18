@@ -1,10 +1,7 @@
-function User({user}){
+function User(){
   return(
     <div>
-      <hr></hr>
-      <h2>Name:{user.name}</h2>
-      <h2>Age:{user.age}</h2>
-      <h2>Email:{user.email}</h2>
+     <h1>User List Page</h1>
     </div>
   )
 }

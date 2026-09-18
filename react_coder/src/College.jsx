@@ -1,11 +1,12 @@
-import { NavLink, Outlet } from "react-router";
+import {Link, NavLink, Outlet } from "react-router";
 
 function College(){
 
   return(
 <div className="college" style={{textAlign:"center"}}>
   <h1>College Page</h1>
-  <NavLink className="link" to="student">Student</NavLink>
+  <h3><Link to="/">Go Back to Home</Link></h3>
+  <NavLink className="link" to="">Student</NavLink>
   <NavLink className="link" to="Department">Department</NavLink>
   <NavLink className="link" to="detail">College Details</NavLink>
   <Outlet/>
