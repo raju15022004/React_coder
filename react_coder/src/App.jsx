@@ -25,12 +25,12 @@ function App() {
 
   {
     usersData.map((user)=>{
-      <ul className="user-list">
-        <li>{user.name}</li>
-        <li>{user.age}</li>
-        <li>{user.email}</li>
-      </ul>
-    })
+  return <ul className="user-list">
+    <li>{user.name}</li>
+    <li>{user.age}</li>
+    <li>{user.email}</li>
+  </ul>
+})
   }
 </div>
   );
