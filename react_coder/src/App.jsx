@@ -1,39 +1,40 @@
-import { Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
+import './App.css'
 
-import Home from "./Home";
-import About from "./About";
-import Login from "./Login";
-import NavBar from "./NavBar";
-import PageNotFound from "./PageNotFound";
-import College from "./College";
-import Student from "./Student";
-import Department from "./Department";
-import Details from "./Details";
-import Users from "./Users";
-import UserDeatils from "./UserDeatails";
 
 function App() {
+  const [usersData,setUserData]=useState([]);
+  useEffect(()=>{
+    getUsersData();
+  },[])
+
+  async function getUsersData() {
+    const url="https://dummyjson.com/users";
+    let response=await fetch(url);
+     response=await response.json()
+     setUserData(response.users)
+
+  }
+    console.log(usersData);
+
   return (
-    <Routes>
-      <Route element={<NavBar />}>
-        <Route path="/users/list?" element={<Users />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
-
-        <Route path="/users/:id/:name?" element={<UserDeatils/>}/>
-      </Route>
-
-
-
-      <Route path="/college" element={<College />}>
-        <Route index element={<Student />} />
-        <Route path="Department" element={<Department />} />
-        <Route path="detail" element={<Details />} />
-      </Route>
-
-      <Route path="*" element={<PageNotFound />} />
-    </Routes>
+<div>
+  <h1 >Fetch data from API</h1>
+   <ul className="user-list">
+      <li>First Name</li>
+      <li>Last Name</li>
+      <li>Age</li>
+     </ul>
+  {
+    usersData && usersData.map((user)=>(
+     <ul className="user-list">
+      <li>{user.firstName}</li>
+      <li>{user.lastName}</li>
+      <li>{user.age}</li>
+     </ul>
+    ))
+  }
+</div>
   );
 }
 
