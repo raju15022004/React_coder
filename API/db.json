@@ -1,0 +1,27 @@
+{
+  "users":[
+    {
+     "name":"Raju",
+     "age":24,
+     "email":"raju032004@gmail.com"
+    },
+
+    {
+     "name":"sam",
+     "age":25,
+     "email":"sam2004@gmail.com"
+    },
+
+    {
+     "name":"peter",
+     "age":26,
+     "email":"peter032004@gmail.com"
+    },
+
+    {
+     "name":"Tony",
+     "age":24,
+     "email":"tony032004@gmail.com"
+    }
+  ]
+}

@@ -8,31 +8,29 @@ function App() {
     getUsersData();
   },[])
 
-  async function getUsersData() {
-    const url="https://dummyjson.com/users";
+  const  getUsersData=async()=> {
+    const url="http://localhost:3000/users";
     let response=await fetch(url);
-     response=await response.json()
-     setUserData(response.users)
+     response=await response.json();
+     console.log(usersData);
+
+     setUserData(response);
 
   }
-    console.log(usersData);
+
 
   return (
 <div>
-  <h1 >Fetch data from API</h1>
-   <ul className="user-list">
-      <li>First Name</li>
-      <li>Last Name</li>
-      <li>Age</li>
-     </ul>
+  <h1 >Integrate JSON server API and Loader</h1>
+
   {
-    usersData && usersData.map((user)=>(
-     <ul className="user-list">
-      <li>{user.firstName}</li>
-      <li>{user.lastName}</li>
-      <li>{user.age}</li>
-     </ul>
-    ))
+    usersData.map((user)=>{
+      <ul className="user-list">
+        <li>{user.name}</li>
+        <li>{user.age}</li>
+        <li>{user.email}</li>
+      </ul>
+    })
   }
 </div>
   );
