@@ -1,27 +1,29 @@
 {
-  "users":[
+  "users": [
     {
-     "name":"Raju",
-     "age":24,
-     "email":"raju032004@gmail.com"
+      "name": "Raju",
+      "age": 24,
+      "email": "raju032004@gmail.com",
+      "id": "eCzkAmduNMw"
     },
-
     {
-     "name":"sam",
-     "age":25,
-     "email":"sam2004@gmail.com"
+      "name": "sam",
+      "age": 25,
+      "email": "sam2004@gmail.com",
+      "id": "bGsuSH4O_Bw"
     },
-
     {
-     "name":"peter",
-     "age":26,
-     "email":"peter032004@gmail.com"
+      "name": "peter",
+      "age": 26,
+      "email": "peter032004@gmail.com",
+      "id": "q0t--LbAR60"
     },
-
     {
-     "name":"Tony",
-     "age":24,
-     "email":"tony032004@gmail.com"
+      "name": "rahul",
+      "email": "ggi2022.2829@ggi.ac.in",
+      "age": "23",
+      "id": "WZOrW4xjjF4"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
