@@ -13,16 +13,16 @@
       "id": "bGsuSH4O_Bw"
     },
     {
-      "name": "peter",
-      "age": 26,
-      "email": "peter032004@gmail.com",
-      "id": "q0t--LbAR60"
-    },
-    {
       "name": "rahul",
       "email": "ggi2022.2829@ggi.ac.in",
       "age": "23",
       "id": "WZOrW4xjjF4"
+    },
+    {
+      "name": "rrr",
+      "email": "ggi2022.2829@ggi.ac.in",
+      "age": "33",
+      "id": "4J3bce48Sr8"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

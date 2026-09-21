@@ -1,10 +1,12 @@
 
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 function UserList() {
 
   const [usersData, setUserData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate=useNavigate();
   const url = "http://localhost:3000/users";
   useEffect(() => {
     getUsersData();
@@ -30,6 +32,10 @@ function UserList() {
    }
   }
 
+  const edituser=(id)=>{
+    navigate("/edit/"+id)
+  }
+
   return (
     <div>
 
@@ -47,12 +53,16 @@ function UserList() {
           return (
             <ul
               key={user.name}
-              className="user-list user-list-head"
+              className="user-list "
             >
               <li>{user.name}</li>
               <li>{user.age}</li>
               <li>{user.email}</li>
-              <li><button onClick={()=>deleteUser(user.id)}>Delete</button></li>
+              <li>
+                <button onClick={()=>deleteUser(user.id)}>Delete</button>
+                <button onClick={()=>edituser(user.id)}>Edit</button>
+
+                </li>
             </ul>
           );
 
