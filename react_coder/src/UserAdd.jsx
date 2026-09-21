@@ -27,7 +27,7 @@ function UserAdd(){
       <br/><br/>
       <input type="text"   onChange={(event)=>setEmail(event.target.value)} placeholder="enter email"/>
       <br/><br/>
-      <button onClick={createUser}>Add User</button>
+      <button onClick={createUser}>Add User </button>
     </div>
   )
 }
