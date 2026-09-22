@@ -1,45 +1,37 @@
-// import {Routes,Route, NavLink} from 'react-router'
-import { useState } from 'react';
+import { useActionState } from 'react';
 import './App.css'
 
 
 
 function App() {
 
-  const [name,setName]=useState('');
-  const [nameErr,setNameErr]=useState();
+const handleLogin=(prevData,forData)=>{
+  let name=forData.get('name')
+  let password=forData.get('password')
+  let regex=/^[A-Z0-9]+%$/i;
 
-  const [password,setPassword]=useState('');
-  const [passErr,setPassErr]=useState();
-
-  const handleName=(event)=>{
-    console.log(event.target.value);
-    if(event.target.value.length>5){
-     setNameErr("Please enter valid username. only 5 characters allowed")
-    }else{
-      setNameErr()
-    }
+  if(name.length>5){
+   return{error:"Name should not container more than 5 characters"}
+  }else if(!regex.test (password)){
+    return {error:'password can container only number and alphabets'}
+  }else{
+    return {message:'Login done'}
   }
 
-  const handlPassword=(event)=>{
-    let regex=/^[A-Z0-9]+$/i;
-    if(regex.test (event.target.value)){
-      setPassErr()
-    }else{
-     setPassErr("Please enter valid password. only number and alphabets allowed")
-
-    }
-  }
+}
+const [data,action,pending]=useActionState(handleLogin,{});
+    console.log(data);
 
   return (
 <div>
-<input className={nameErr?'error':''} type='text' onChange={handleName} placeholder='enter name'/>
-<span className='red-color'>{nameErr && nameErr}</span>
+  <h1>Validation with useActionstate in React</h1>
+  <form action={action}>
+<input name="name" placeholder='enter user name'/>
 <br/><br/>
-<input className={passErr?'error':''}  type="text"  onChange={handlPassword} placeholder='enter password' />
-<span className='red-color'>{passErr && passErr}</span>
+<input name='password' placeholder='enter user  password' />
 <br/><br/>
-<button disabled={passErr || nameErr}>Login</button>
+<button >Login</button>
+</form>
 </div>
   );
 }
