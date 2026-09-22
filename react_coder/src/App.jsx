@@ -1,37 +1,43 @@
-import { useActionState } from 'react';
+import { useActionState, useReducer } from 'react';
 import './App.css'
 
+const emptyData={
+  name:'',
+  password:'',
+  email:'',
+  city:'',
+  address:''
+}
 
+const reducer=(data,action)=>{
+  return{...data,[action.type]:action.val}
+}
 
 function App() {
-
-const handleLogin=(prevData,forData)=>{
-  let name=forData.get('name')
-  let password=forData.get('password')
-  let regex=/^[A-Z0-9]+%$/i;
-
-  if(name.length>5){
-   return{error:"Name should not container more than 5 characters"}
-  }else if(!regex.test (password)){
-    return {error:'password can container only number and alphabets'}
-  }else{
-    return {message:'Login done'}
-  }
-
-}
-const [data,action,pending]=useActionState(handleLogin,{});
-    console.log(data);
-
+const [state,dispatch]=useReducer(reducer,emptyData)
+console.log(state);
   return (
 <div>
-  <h1>Validation with useActionstate in React</h1>
-  <form action={action}>
-<input name="name" placeholder='enter user name'/>
+  <h1>Use Reducer</h1>
+<input type='text'onChange={(event)=>dispatch({val:event.target.value,type:'name'})} placeholder='enter  name'/>
 <br/><br/>
-<input name='password' placeholder='enter user  password' />
+<input type='text' onChange={(event)=>dispatch({val:event.target.value,type:'password'})} placeholder='enter password' />
 <br/><br/>
-<button >Login</button>
-</form>
+<input type='text'onChange={(event)=>dispatch({val:event.target.value,type:'email'})} placeholder='enter email' />
+<br/><br/>
+<input type='text'onChange={(event)=>dispatch({val:event.target.value,type:'city'})} placeholder='enter city' />
+<br/><br/>
+<input type='text'onChange={(event)=>dispatch({val:event.target.value,type:'address'})} placeholder='enter address' />
+<br/><br/>
+
+<ul>
+  <li>Name:{state.name}</li>
+  <li>Password:{state.password}</li>
+  <li>Email:{state.email}</li>
+  <li>City:{state.city}</li>
+  <li>Address:{state.address}</li>
+</ul>
+<button>Add Details</button>
 </div>
   );
 }
