@@ -1,3 +1,24 @@
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
 /* .user-list{
   display: flex;
   justify-content: space-around;
@@ -19,7 +40,7 @@
 } */
 
 
-.error{
+/* .error{
   border: 1px solid red;
 }
 .error:focus{
@@ -28,4 +49,4 @@
 
 .red-color{
   color: red;
-}
+} */
