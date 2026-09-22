@@ -1,4 +1,4 @@
-.user-list{
+/* .user-list{
   display: flex;
   justify-content: space-around;
   border:1px solid #aaa;
@@ -16,4 +16,16 @@
   width: 400px;
   justify-content: space-around;
   list-style: none;
+} */
+
+
+.error{
+  border: 1px solid red;
+}
+.error:focus{
+  outline: 1px solid red;
+}
+
+.red-color{
+  color: red;
 }
