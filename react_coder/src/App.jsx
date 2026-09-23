@@ -1,34 +1,38 @@
-import React, { Suspense, use } from "react";
+import { useState } from "react";
 
-const fetchData=()=>fetch('https://dummyjson.com/users').then((response)=>response.json());
-const userResource=fetchData();
 function App() {
+
+  const Colors=JSON.parse(localStorage.getItem('color'))
+  const [r,setR]=useState(Colors && Colors.r?Colors.r:0);
+  const [g,setG]=useState(Colors && Colors.g?Colors.g:0);
+  const [b,setB]=useState(Colors && Colors.b?Colors.b:0);
+
+  const save=()=>{
+    console.log("saved");
+
+    localStorage.setItem("color",JSON.stringify({r,g,b}))
+  }
 
   return (
 <div>
-<h1>use API in React js</h1>
-<Suspense fallback={<p>Loading...</p>}>
-<Users userResource={userResource}/>
-
-</Suspense>
+<h1>Color Mixer</h1>
+<div style={{backgroundColor:'rgb('+r+','+g+','+b+')',height:200,width:200}}></div>
+<label htmlFor="">Red</label>
+value={r}
+<input type="range" onChange={(event)=>setR(event.target.value)} min={0} max={255}/>
+<br/><br/>
+<label htmlFor="">Green</label>
+value={g}
+<input type="range" onChange={(event)=>setG(event.target.value)} min={0} max={255}/>
+<br/><br/>
+<label htmlFor="">Blue</label>
+value={b}
+<input type="range" onChange={(event)=>setB(event.target.value)} min={0} max={255}/>
+<br/><br/>
+<button onClick={save}>Save Color Combination</button>
 </div>
   );
 }
 
 export default App;
-
-const Users=({userResource})=>{
-  const userData=use(userResource)
-  console.log(userData.users);
-  return(
-    <div>
-    <h1>Users List</h1>
-    {
-      userData?.users?.map((user)=>(
-        <h1>{user.firstName}</h1>
-      ))
-    }
-    </div>
-  )
-}
 
