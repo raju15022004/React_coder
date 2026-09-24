@@ -3,7 +3,7 @@ import { useEffect } from "react"
 const Counter1=({count,data})=>{
 
   useEffect(()=>{
-    console.log("mounting phase only");
+    console.log("mounting phase ");
   },[])
 
   return(
